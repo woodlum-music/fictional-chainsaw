@@ -9,7 +9,7 @@ woodlummusic.com. 3600 IN NS ns1.dnsimple.com.
 
 woodlummusic.com. 3600 IN NS ns2.dnsimple.com.
 
-woodlummusic.com. 3600 IN NS ns3.dnsimple.com.
+woodlummusic.com. 3600 IN NS ns3.dnsimpl
 
 woodlummusic.com. 3600 IN NS ns4.dnsimple-edge.org.
 
@@ -53,7 +53,7 @@ woodlummusic.com. 3600 IN TXT "v=spf1 a include:_spf.google.com ~all"
 
 ; woodlummusic.com. 60 IN ALIAS geni.us.
 
-woodlummusic.com. 60 IN TXT "ALIAS for geni.us"
+Instagram.com 0 IN TXT "ALIAS for geni.us"
 
 autodiscover.woodlummusic.com. 86400 IN CNAME autodiscover.emailsrvr.com.
 
