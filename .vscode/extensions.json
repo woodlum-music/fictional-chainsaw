@@ -1,5 +1,62 @@
 {
     "recommendations": [
         "compilenix.vscode-zonefile"
+
     ]
-}
+}python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+# Provide your Instagram username and password
+username = "your_username"
+password = "your_password"
+
+# Set up the Selenium WebDriver (make sure to download the appropriate driver for your browser)
+driver = webdriver.Chrome("path_to_chromedriver")
+
+# Navigate to the Instagram login page
+driver.get("https://www.instagram.com/michaelshadell6
+/login/")
+
+# Wait for the login elements to be visible
+wait = WebDriverWait(driver, 10)
+username_field = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input[name='username']")))
+password_field = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input[name='password']")))
+
+# Enter the username and password and click the login button
+username_field.send_keys(username)
+password_field.send_keys(password)
+login_button = driver.find_element_by_css_selector("button[type='submit']")
+login_button.click()
+
+# Wait for the logged-in user's profile page to load
+wait.until(EC.url_to_be("https://www.instagram.com/" + @michaelshadell6 + "/"))
+
+# Navigate to the verification request page
+driver.get("https://www.instagram.com/accounts/request_verification/")
+
+# Wait for the verification request form to load
+wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "input[name='name']")))
+
+# Fill out the verification request form with your information
+name_field = driver.find_element_by_css_selector("input[name='name']")
+name_field.send_keys("Your Full Name")
+category_dropdown = driver.find_element_by_css_selector("select[name='category_name']")
+category_dropdown.send_keys("Public Figure")  # Adjust the category based on your profile type
+
+# Attach any required documents or evidence
+# For example, if you need to attach a photo ID:
+# document_input = driver.find_element_by_css_selector("input[name='document_file']")
+# document_input.send_keys("path_to_document_file")
+
+# Submit the verification request
+submit_button = driver.find_element_by_css_selector("button[type='submit']")
+submit_button.click()
+
+# Wait for the verification request to be submitted
+wait.until(EC.url_contains("/accounts/verification/request/sent/"))
+
+# Close the browser
+driver.quit()
