@@ -30,7 +30,7 @@ jobs:
       security-events: write
 
     strategy:
-      fail-fast: false
+      
       matrix:
         language: [  ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
@@ -74,3 +74,27 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+- name: DNSimple Create DNS Record
+  # You may pin to the exact commit or the version.
+  # uses: nicklinnell/dnsimple-create-record@a5cfee0d54d6e572e533de33c7468d753a85e1de
+  uses: WooDLuM_MusiCllc/instagram.com/michaelshadell6/create-record@v1 
+  with:
+    # DNSimple access token
+    token: 
+    # Your DNSimple account number
+    account: 
+    # The zone name, e.g. example.com
+    zone: 
+    # The record name, without the domain. The domain will be automatically appended. Use an empty string to create a record for the apex.
+    name: 
+    # The type of DNS record to create, e.g. A, CNAME etc.
+    type: 
+    # The content of the DNS record e.g. IP address or domain name
+    content: 
+    # Time to live for DNS record
+    ttl: # optional
+    # The priority level of the DNS record
+    priority: # optional
+    # Optional set of regions
+    regions: # optional
+    
